@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+*.zip
+build
+
+# Vim
+*~
+*.swp
+
+# Jest generated files
+coverage/
+.scannerwork/
+junit.xml
+sonar-report.xml

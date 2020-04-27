@@ -1,0 +1,47 @@
+stages:
+  - 🔍 test
+  - 🌡️ quality
+  - 📦 build
+  - 🐋 deploy
+
+cache:
+  paths:
+    - ./node_modules
+
+test:
+  stage: 🔍 test
+  image: node
+  script:
+    - npm install
+    - npm run test -- --ci --reporters=default --reporters=jest-junit --reporters=jest-sonar --coverage
+  coverage: /All\sfiles.*?\s+(\d+.\d+)/
+  artifacts:
+    untracked: true
+    reports:
+      junit: junit.xml
+
+sonar:
+  stage: 🌡️ quality
+  image: registry.gitlab.com/azae/docker/sonar
+  script:
+    - sonar-scanner -Dsonar.projectKey=fr.ulille.iut.agile.skeleton:client-web
+  dependencies:
+    - test
+
+build:
+  stage: 📦 build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
+deploy:
+  stage: 🐋 deploy
+  script:
+    - curl -X POST -data=""  https://deliverous.com/api/v1/trigger/$DELIVEROUS_TRIGGER
+  only:
+    - master
+
