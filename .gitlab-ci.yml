@@ -24,7 +24,7 @@ sonar:
   stage: 🌡️ quality
   image: registry.gitlab.com/azae/docker/sonar
   script:
-    - sonar-scanner -Dsonar.projectKey=fr.ulille.iut.agile.skeleton:client-web
+    - sonar-scanner -Dsonar.projectKey=fr.ulille.iut.agile.groupe-9:client-web
   dependencies:
     - test
 
