@@ -1,0 +1,64 @@
+body > header {
+    box-shadow: 0px 3px 9px 0px rgba(124, 124, 124, 0.3);
+	margin: 0;
+	padding: 0 20px;
+	width: 100%;
+	background-color: whitesmoke;
+	display: flex;
+	position: fixed;
+	z-index: 99;
+	height: 58px;
+	top: 0;
+}
+
+body > header > nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+body > header > nav > h1 {
+	margin: 0;
+	font-size: 35px;
+	font-family: Bebas;
+	font-weight: normal;
+	letter-spacing: .1em;
+}
+body > header > nav > h1.logo {
+	color: #d19c08bb;
+}
+body > header > nav > h1.logo em {
+	display: inline-block;
+	font-style: normal;
+	color: #d19c08bb;
+}
+body > header .mainMenu {
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body > header .mainMenu li {
+	display: flex;
+}
+body > header .mainMenu a {
+	display: flex;
+	align-items: center;
+	padding: 0 30px;
+	font-size: 18px;
+	font-weight: 200;
+	text-decoration: none;
+	color: black;
+	transition: all .3s ease;
+	border-bottom: 2px #cb0a2300 solid;
+}
+body > header .mainMenu a.selected{
+	color: #d19c08bb;
+	border-bottom: 2px  #d19c08bb solid;
+}
+body > header .mainMenu a:hover {
+	color: #d19c08bb;
+	transform: translateY(-2px);
+    border-bottom: 2px #d19c08bb solid;
+}
