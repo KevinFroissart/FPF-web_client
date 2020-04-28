@@ -9,10 +9,11 @@ fetch(apiUrl + '/api/v1/myresource')
 	.then(response => response.text())
 	.then(message => (appContainer.innerHTML = message));
 
-
 aboutContainer.style.display = 'initial';
 
+/* /!\ */
 var oldSection = aboutContainer;
+/* /!\ */
 
 function handleNavClick(event) {
 	event.preventDefault();
