@@ -1,6 +1,5 @@
 /* Style inputs with type="text", select elements and textareas */
-input[type='email'],
-input[type='password'],
+input[type='text'],
 select,
 textarea {
 	width: 100%; /* Full width */
@@ -14,7 +13,7 @@ textarea {
 }
 
 /* Style the submit button with a specific background color etc */
-button[type='validate'] {
+input[type='submit'] {
 	background-color: #4caf50;
 	color: white;
 	padding: 12px 20px;
@@ -24,12 +23,9 @@ button[type='validate'] {
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-button[type='validate']:hover {
+input[type='submit']:hover {
 	background-color: #45a049;
 }
-
-/* When the button is clicked, return to the normal color */
-/* TO DO ! */
 
 /* Add a background color and some padding around the form */
 .container {

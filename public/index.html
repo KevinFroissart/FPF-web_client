@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<link rel="stylesheet" type="text/css" href="css/header.css" />
 		<link rel="stylesheet" type="text/css" href="css/contact.css" />
+		<link rel="stylesheet" type="text/css" href="css/connection.css" />
 		<link
 			rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -50,6 +51,7 @@
 					<li><a id="bapteme" href="#">Baptême</a></li>
 					<li><a id="deces" href="#">Décès</a></li>
 					<li><a id="contact" href="#">Contact</a></li>
+					<li><a id="monCompte" href="#">Mon Compte</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -77,7 +79,40 @@
 
 		<section class="contactContainer">
 			<h2>Contact</h2>
-			<div class="container sign-inContainer">
+			<div class="container">
+				<form action="">
+					<label for="fname">Nom</label>
+					<input
+						type="text"
+						id="fname"
+						name="firstname"
+						placeholder="Votre nom.."
+					/>
+
+					<label for="lname">Prenom</label>
+					<input
+						type="text"
+						id="lname"
+						name="lastname"
+						placeholder="Votre prénom.."
+					/>
+
+					<label for="subject">Message</label>
+					<textarea
+						id="subject"
+						name="subject"
+						placeholder="Écrivez votre message.."
+						style="height: 200px;"
+					></textarea>
+
+					<input type="submit" value="Envoyer" />
+				</form>
+			</div>
+		</section>
+
+		<section class="monCompteContainer">
+			<h2>Mon Compte</h2>
+			<div class="container connectionContainer">
 				<form>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Adresse mail</label>
@@ -111,16 +146,16 @@
 							>Rester connecté.</label
 						>
 					</div>
-					<button type="validate" class="btn btn-primary">
+					<button type="submit" class="btn btn-primary connexion">
 						Connexion
 					</button>
-					<button type="change-sign" class="btn btn-secondary">
+					<button type="change-sign" class="btn btn-secondary inscription">
 						Inscription
 					</button>
 				</form>
 			</div>
 
-			<div class="container sign-upContainer">
+			<div class="container inscriptionContainer">
 				<form>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Adresse mail</label>
@@ -150,10 +185,10 @@
 							id="exampleInputPassword1"
 						/>
 					</div>
-					<button type="validate" class="btn btn-primary">
+					<button type="submit" class="btn btn-primary inscription">
 						Inscription
 					</button>
-					<button type="change-sign" class="btn btn-secondary">
+					<button type="change-sign" class="btn btn-secondary connexion">
 						Connexion
 					</button>
 				</form>

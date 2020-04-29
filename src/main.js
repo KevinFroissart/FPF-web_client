@@ -11,9 +11,7 @@ fetch(apiUrl + '/api/v1/myresource')
 
 aboutContainer.style.display = 'initial';
 
-/* /!\ */
-var oldSection = aboutContainer;
-/* /!\ */
+let oldSection = aboutContainer;
 
 function handleNavClick(event) {
 	event.preventDefault();
@@ -33,3 +31,26 @@ function handleNavClick(event) {
 
 const navLinks = document.querySelectorAll('.mainMenu a');
 navLinks.forEach(link => link.addEventListener('click', handleNavClick));
+
+const connexionContainer = document.querySelector('.connexionContainer');
+
+connexionContainer.style.display = 'initial';
+
+let oldSignDiv = connexionContainer;
+
+function handleSignClick(event) {
+	event.preventDefault();
+	const prevActiveButton = document.querySelectorAll('.signContainer button');
+
+	const buttonDiv = document.querySelector(`.${this.class[2]}Container`);
+
+	prevActiveButton.forEach(link => link?.setAttribute('class', ' '));
+
+	oldSignDiv.style.display = 'none';
+	oldSignDiv = buttonDiv;
+
+	buttonDiv.style.display = 'initial';
+}
+
+const signLinks = document.querySelectorAll('.signContainer button');
+signLinks.forEach(link => link.addEventListener('click', handleSignClick));
