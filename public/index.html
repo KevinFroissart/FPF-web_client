@@ -33,6 +33,8 @@
 		/>
 		<!-- Core theme CSS (includes Bootstrap)-->
 		<link href="css/styles.css" rel="stylesheet" />
+		<!-- Main CSS-->
+		<link href="css/main.css" rel="stylesheet" />
 		<!-- Bootstrap core JS-->
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
@@ -87,7 +89,10 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link js-scroll-trigger" href="#about">About</a>
-						</li>	
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="#basket">Panier</a>
+						</li>
 						<li class="nav-item">
 							<a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
 						</li>
@@ -496,6 +501,62 @@
 				</div>
 			</div>
 		</section> -->
+		<!-- Basket-->
+		<section class="page-section" id="basket">
+			<div class="container">
+				<div class="text-center">
+					<h2 class="section-heading text-uppercase">Panier</h2>
+					<h3 class="section-subheading text-muted">
+						Lorem ipsum dolor sit amet consectetur.
+					</h3>
+				</div>
+				<div class="connection-method">
+					<div class="connection">
+						<form>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Adresse mail</label>
+								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+								<small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre adresse mail.</small>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Mot de passe</label>
+								<input type="password" class="form-control" id="exampleInputPassword1">
+							</div>
+							<div class="form-group form-check">
+								<input type="checkbox" class="form-check-input" id="exampleCheck1">
+								<label class="form-check-label" for="exampleCheck1">Rester connecté.</label>
+							</div>
+							<button type="submit" class="btn btn-primary">Se connecter</button>
+							<button type="button" class="btn btn-secondary">S'inscrire</button>
+						</form>
+					</div>
+					<div class="registration">
+						<form>
+							<div class="form-group">
+								<div class="row">
+									<div class="col">
+										<input type="text" class="form-control" placeholder="Prénom">
+									</div>
+									<div class="col">
+										<input type="text" class="form-control" placeholder="Nom">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<br>
+								<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Adresse mail">
+								<small class="form-text text-muted">Nous ne partagerons jamais votre adresse mail.</small>
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" placeholder="Mot de passe">
+							</div>
+							<button type="submit" class="btn btn-primary">S'inscrire</button>
+							<button type="button" class="btn btn-secondary">Se connecter</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!-- Clients-->
 		<section class="py-5">
 			<div class="container">

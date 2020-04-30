@@ -1,0 +1,7 @@
+.connection, .registration {
+    display: none;
+}
+
+.registration input[type='text'] {
+    text-transform: capitalize;
+}
