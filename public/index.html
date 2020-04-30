@@ -728,20 +728,34 @@
 											/>
 										</div>
 										<div class="col-sm">
-											<input type="color" id="head" value="#e66465">
-											<label for="head">Couleur du faire-part</label>
-											<ul class="list-inline">
-												<li>Date: January 2020</li>
-												<li>Client: Threads</li>
-												<li>Category: Illustration</li>
-											</ul>
-											<button
-													class="btn btn-primary"
-													data-dismiss="modal"
-													type="button"
-											>
-												<i class="fas fa-times mr-1"></i>Close Project
-											</button>
+											<form class="personnalisation">
+												<div class="form-group">
+													<div id="color-picker-1" class="mx-auto"></div>
+													<input type="color" id="head" value="#e66465">
+													<label for="head">Couleur du faire-part</label>
+												</div>
+												<div class="form-group">
+													<label for="contenuArea">Remplissez votre faire part</label>
+													<textarea class="form-control" id="contenuArea" style="resize: none" rows="7" autofocus="true"></textarea>
+												</div>
+												<div class="form-group form-check">
+													<input type="checkbox" class="form-check-input" id="etiquetteCheck">
+													<label class="form-check-label" for="etiquetteCheck">Etiquette</label>
+												</div>
+												<div class="form-group">
+													<div class="etiquetteCheckArea">
+														<label for="etiquetteArea">Remplissez ici votre étiquette</label>
+														<textarea class="form-control" id="etiquetteArea" style="resize: none" rows="2" maxlength="20" placeholder="20 caractères max."></textarea>
+													</div>
+												</div>
+												<button
+														class="btn btn-primary"
+														data-dismiss="modal"
+														type="button"
+												>
+													<i class="fas fa-times mr-1"></i>Close Project
+												</button>
+											</form>
 										</div>
 									</div>
 								</div>
