@@ -55,3 +55,15 @@ const checkBox = document.querySelectorAll(
 checkBox.forEach(checkBox =>
 	checkBox.addEventListener('click', displayTextArea)
 );
+
+function savePersonalisation() {
+	const color = document.getElementById('f-pColorPicker').value;
+	const content = document.getElementById('contentArea').value;
+	const tag = document.getElementById('etiquetteCheck').checked;
+	const tagContent = tag ? document.getElementById('etiquetteArea').value : '';
+	const ajouts = document.querySelectorAll('.choiceList .badge');
+	console.log(tagContent);
+}
+
+const saveButton = document.querySelector('.saveButton');
+saveButton.addEventListener('click', savePersonalisation);
