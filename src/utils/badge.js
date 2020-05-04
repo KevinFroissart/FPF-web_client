@@ -1,3 +1,4 @@
+import getApiUrl from './url';
 import $ from 'jquery';
 
 /**
@@ -5,10 +6,22 @@ import $ from 'jquery';
  */
 $(() => {
 
+
+    /**
+     * Ajoute des items pour les selectioner dans la liste des badge depuis la base de donnée 
+     */
+    fetch(`${getApiUrl(window.location)}/cardshapes`).then(response => response.text())
+        .then(message => {
+            const badges = JSON.parse(message);
+            badges.forEach(badge => {
+                $('#badges-list').append(`<a class="dropdown-item" href="#">${badge.name}</a>`);
+            });
+        });
+
     /**
      * Ajoute un item depuis la liste
      */
-    $('.dropdownChoice .dropdown-menu .dropdown-item').click((e) => {
+    $('#badges-list').on('click', '.dropdown-item', (e) => {
         const item = $(e.target).html();
         $('.choiceList').append(`<a href="#" class="badge badge-success" >${item}</a>`);
     });
