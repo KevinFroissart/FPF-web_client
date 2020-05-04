@@ -5,6 +5,16 @@ import $ from 'jquery';
  * Ajoute des items sur la page de personalisation des faire-part de mariage.
  */
 $(() => {
+	/**
+	 * Ajoute un item depuis la liste
+	 */
+	$('.dropdownChoice .dropdown-menu .dropdown-item').click(e => {
+		e.preventDefault();
+		const item = $(e.target).html();
+		$('.choiceList').append(
+			`<a href="#" class="badge badge-success" >${item}</a>`
+		);
+	});
 
 
     /**
