@@ -1,4 +1,4 @@
-.connection, .registration {
+.connection, .registration, .etiquetteCheckArea {
     display: none;
 }
 
@@ -6,3 +6,7 @@
     text-transform: capitalize;
 }
 
+.badge {
+    margin: 2% 1%;
+    font-size: medium;
+}
