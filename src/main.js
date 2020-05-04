@@ -1,4 +1,5 @@
 import getApiUrl from './utils/url';
+import $ from 'jquery';
 
 const appContainer = document.querySelector('#appContainer'),
 	apiUrl = getApiUrl(window.location);
@@ -50,3 +51,23 @@ const checkBox = document.querySelectorAll(
 checkBox.forEach(checkBox =>
 	checkBox.addEventListener('click', displayTextArea)
 );
+
+const choiceList = document.querySelector('.choiceList');
+const listAjouts = [];
+
+function reloadChoiceList() {
+	choiceList.innerHTML = '';
+	listAjouts.forEach(badge => (choiceList.innerHTML += badge));
+}
+
+function dropdownChoice(event) {
+	event.preventDefault();
+	const item = event.target;
+	const badge = `<a href="#" class="badge badge-success" >${item.innerText}</a>`;
+	listAjouts.push(badge);
+	reloadChoiceList();
+}
+const items = document.querySelectorAll('.dropdownChoice .dropdown-item');
+items.forEach(item => item.addEventListener('click', dropdownChoice));
+
+$('.badge').click(() => $(this).remove());
