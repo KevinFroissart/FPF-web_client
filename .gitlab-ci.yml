@@ -47,4 +47,3 @@ deploy:
     - curl -X POST -data=""  https://deliverous.com/api/v1/trigger/$DELIVEROUS_TRIGGER
   only:
     - master
-

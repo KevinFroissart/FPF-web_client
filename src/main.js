@@ -1,5 +1,5 @@
 import getApiUrl from './utils/url';
-import badge from './utils/badge';
+require('./utils/badge');
 
 const appContainer = document.querySelector('#appContainer'),
 	apiUrl = getApiUrl(window.location);
