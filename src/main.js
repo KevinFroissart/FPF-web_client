@@ -1,5 +1,5 @@
 import getApiUrl from './utils/url';
-require('./utils/badge');
+import * as badge from './utils/badge';
 
 const appContainer = document.querySelector('#appContainer'),
 	apiUrl = getApiUrl(window.location);
@@ -106,3 +106,17 @@ function loadPersonnalisation() {
 
 /** Load personnalisation on window load */
 window.onload = loadPersonnalisation;
+
+/**
+ * Personalisation reset function
+ */
+function resetPersonnalisation() {
+	document.getElementById('f-pColorPicker').value = '#9C8867';
+	document.getElementById('contentArea').value = '';
+	document.getElementById('etiquetteCheck').checked = false;
+	displayTextArea();
+	document.getElementById('etiquetteArea').value = '';
+	document.querySelector('.choiceList').innerHTML = null;
+}
+const resetButton = document.querySelector('.resetButton');
+resetButton.addEventListener('click', resetPersonnalisation);
