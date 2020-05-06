@@ -13,7 +13,7 @@ $(function () {
 			var message = $('textarea#message').val();
 			var firstName = name; // For Success/Failure Message
 
-			console.log(`${name}, ${email}, ${phone}, ${message}`);
+			//console.log(`${name}, ${email}, ${phone}, ${message}`);
 			$this = $('#sendMessageButton');
 			$this.prop('disabled', true); // Disable submit button until AJAX call is complete to prevent duplicate messages
 			$.ajax({
