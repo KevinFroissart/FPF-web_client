@@ -12,15 +12,12 @@ $(function () {
 			var phone = $('input#phone').val();
 			var message = $('textarea#message').val();
 			var firstName = name; // For Success/Failure Message
-			// Check for white space in name for Success/Fail message
-			if (firstName.indexOf(' ') >= 0) {
-				firstName = name.split(' ').slice(0, -1).join(' ');
-			}
-			console.log(`${name}, ${email}, ${phone}, ${message}, ${firstName}`);
+
+			//console.log(`${name}, ${email}, ${phone}, ${message}`);
 			$this = $('#sendMessageButton');
 			$this.prop('disabled', true); // Disable submit button until AJAX call is complete to prevent duplicate messages
 			$.ajax({
-				url: 'assets/mail/contact_me.php',
+				url: `http://groupe9.azae.eu:8080/api/v1/contact/query`,
 				type: 'POST',
 				data: {
 					name: name,
@@ -55,8 +52,8 @@ $(function () {
 					$('#success > .alert-danger').append(
 						$('<strong>').text(
 							'Désolé ' +
-								firstName +
-								', il semblerait que mon service de messagerie ne répond pas. Merci de réessayer plus tard!'
+							firstName +
+							', il semblerait que mon service de messagerie ne répond pas. Merci de réessayer plus tard!'
 						)
 					);
 					$('#success > .alert-danger').append('</div>');
