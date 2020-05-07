@@ -10,7 +10,7 @@ $(() => {
     /**
      * Ajoute des items pour les selectioner dans la liste des badge depuis la base de donnée 
      */
-    fetch(`${getApiUrl(window.location)}/cardshapes`).then(response => response.text())
+    fetch(`${getApiUrl(window.location)}/api/cardshapes`).then(response => response.text())
         .then(message => {
             const badges = JSON.parse(message);
             badges.forEach(badge => {
