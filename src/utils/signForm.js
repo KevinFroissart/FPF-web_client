@@ -22,7 +22,5 @@ function createNewUser() {
 	}).then(response => response.json());
 	console.log(JSON.stringify(user));
 }
-const registrationButton = document.querySelector(
-	'.registration button[type=submit]'
-);
-registrationButton.addEventListener('click', createNewUser);
+const registrationForm = document.getElementById('registrationForm');
+registrationForm.addEventListener('submit', createNewUser);
