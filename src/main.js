@@ -1,10 +1,11 @@
 import getApiUrl from './utils/url';
 import * as badge from './utils/badge';
+import * as signForm from './utils/signForm';
 
 const appContainer = document.querySelector('#appContainer'),
 	apiUrl = getApiUrl(window.location);
 
-fetch(apiUrl + '/api/v1/myresource')
+fetch(apiUrl + '/api/users')
 	.then(response => response.text())
 	.then(message => (appContainer.innerHTML = message));
 
