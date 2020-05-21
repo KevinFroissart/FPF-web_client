@@ -1,12 +1,4 @@
-import getApiUrl from './utils/url';
-import * as badge from './utils/badge';
-
-const appContainer = document.querySelector('#appContainer'),
-	apiUrl = getApiUrl(window.location);
-
-fetch(apiUrl + '/api/v1/myresource')
-	.then(response => response.text())
-	.then(message => (appContainer.innerHTML = message));
+require('./utils/image-preview');
 
 /**
  *  Allows to switch between connection and registration forms
@@ -33,90 +25,75 @@ connectionLinks.forEach(link =>
 	link.addEventListener('click', toggleConnectionMethod)
 );
 
-/**
- * Display tag text area the tag checkBox is checked
- */
-function displayTextArea() {
-	const textArea = document.querySelector(`.etiquetteCheckArea`);
 
-	/* If the checkbox is checked, display the output text */
-	if (checkBox.checked == true) {
-		textArea.style.display = 'initial';
-	} else {
-		textArea.style.display = 'none';
-	}
-}
-const checkBox = document.getElementById('etiquetteCheck');
-checkBox.addEventListener('click', displayTextArea);
+// /**
+//  * Personnalisation save function
+//  */
+// function savePersonalisation() {
+// 	localStorage.setItem(
+// 		'color',
+// 		document.getElementById('f-pColorPicker').value
+// 	);
+// 	localStorage.setItem('content', document.getElementById('contentArea').value);
+// 	localStorage.setItem(
+// 		'tag',
+// 		document.getElementById('etiquetteCheck').checked
+// 	);
+// 	localStorage.setItem(
+// 		'tagContent',
+// 		document.getElementById('etiquetteCheck').checked
+// 			? document.getElementById('etiquetteArea').value
+// 			: ''
+// 	);
+// 	const choicesText = [];
+// 	document
+// 		.querySelectorAll('.choiceList .badge')
+// 		.forEach(badge => choicesText.push(badge.textContent));
+// 	localStorage.setItem('ajouts', JSON.stringify(choicesText));
+// }
 
-/**
- * Personnalisation save function
- */
-function savePersonalisation() {
-	localStorage.setItem(
-		'color',
-		document.getElementById('f-pColorPicker').value
-	);
-	localStorage.setItem('content', document.getElementById('contentArea').value);
-	localStorage.setItem(
-		'tag',
-		document.getElementById('etiquetteCheck').checked
-	);
-	localStorage.setItem(
-		'tagContent',
-		document.getElementById('etiquetteCheck').checked
-			? document.getElementById('etiquetteArea').value
-			: ''
-	);
-	const choicesText = [];
-	document
-		.querySelectorAll('.choiceList .badge')
-		.forEach(badge => choicesText.push(badge.textContent));
-	localStorage.setItem('ajouts', JSON.stringify(choicesText));
-}
+// window.onbeforeunload = savePersonalisation;
 
-window.onbeforeunload = savePersonalisation;
+// /**
+//  * Personnalisation load function
+//  */
+// function loadPersonnalisation() {
+// 	if (localStorage.getItem('color') != null) {
+// 		document.getElementById('f-pColorPicker').value = localStorage.getItem(
+// 			'color'
+// 		);
+// 	}
+// 	document.getElementById('contentArea').value = localStorage.getItem(
+// 		'content'
+// 	);
+// 	localStorage.getItem('tag') == 'true'
+// 		? (document.getElementById('etiquetteCheck').checked = true)
+// 		: null;
+// 	displayTextArea();
+// 	document.getElementById('etiquetteArea').value = localStorage.getItem(
+// 		'tagContent'
+// 	);
+// 	const choicesText = JSON.parse(localStorage.getItem('ajouts'));
+// 	choicesText.forEach(choice => {
+// 		document.querySelector(
+// 			'.choiceList'
+// 		).innerHTML += `<a href="#" class="badge badge-success" >${choice}</a>`;
+// 	});
+// }
 
-/**
- * Personnalisation load function
- */
-function loadPersonnalisation() {
-	if (localStorage.getItem('color') != null) {
-		document.getElementById('f-pColorPicker').value = localStorage.getItem(
-			'color'
-		);
-	}
-	document.getElementById('contentArea').value = localStorage.getItem(
-		'content'
-	);
-	localStorage.getItem('tag') == 'true'
-		? (document.getElementById('etiquetteCheck').checked = true)
-		: null;
-	displayTextArea();
-	document.getElementById('etiquetteArea').value = localStorage.getItem(
-		'tagContent'
-	);
-	const choicesText = JSON.parse(localStorage.getItem('ajouts'));
-	choicesText.forEach(choice => {
-		document.querySelector(
-			'.choiceList'
-		).innerHTML += `<a href="#" class="badge badge-success" >${choice}</a>`;
-	});
-}
+// /** Load personnalisation on window load */
+// window.onload = loadPersonnalisation;
 
-/** Load personnalisation on window load */
-window.onload = loadPersonnalisation;
-
-/**
- * Personalisation reset function
- */
-function resetPersonnalisation() {
-	document.getElementById('f-pColorPicker').value = '#9C8867';
-	document.getElementById('contentArea').value = '';
-	document.getElementById('etiquetteCheck').checked = false;
-	displayTextArea();
-	document.getElementById('etiquetteArea').value = '';
-	document.querySelector('.choiceList').innerHTML = null;
-}
-const resetButton = document.querySelector('.resetButton');
-resetButton.addEventListener('click', resetPersonnalisation);
+// /**
+//  * Personalisation reset function
+//  */
+// function resetPersonnalisation() {
+// 	document.getElementById('f-pColorPicker').value = '#9C8867';
+// 	document.getElementById('contentArea').value = '';
+// 	document.getElementById('etiquetteCheck').checked = false;
+// 	displayTextArea();
+// 	document.getElementById('etiquetteArea').value = '';
+// 	document.querySelector('.choiceList').innerHTML = null;
+// }
+// const resetButton = document.querySelector('.resetButton');
+// resetButton.addEventListener('click', resetPersonnalisation);

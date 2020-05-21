@@ -723,75 +723,23 @@
 									<!-- Project Details Go Here-->
 									<h2 class="text-uppercase">Faire-part de mariage</h2>
 									<p class="item-intro text-muted">
-										Ici, vous pouvez personnaliser votre faire-part grâce à de nombreuses possibilités.
+										Ici, vous pouvez personnaliser votre future faire-part.
 									</p>
 									<div class="row justify-content-around">
 										<div class="col-sm">
 											<img
-													class="img-fluid d-block mx-auto"
-													src="assets/img/portfolio/model1-full.jpg"
-													alt=""
+												id="faire-part-preview"
+												class="img-fluid d-block mx-auto"
+												alt="preview"
 											/>
 										</div>
-										<div class="col-sm">
-											<form class="personnalisation">
-												<div class="form-group">
-													<div class="container">
-														<input type="color" id="f-pColorPicker" value="#9C8867">
-														<label for="f-pColorPicker">Couleur du faire-part</label>
-													</div>
-												</div>
-												<div class="form-group">
-													<label for="contentArea">Remplissez votre faire part</label>
-													<textarea class="form-control" id="contentArea" style="resize: none" rows="10" autofocus="true"></textarea>
-												</div>
-												<div class="form-group form-check">
-													<input type="checkbox" class="form-check-input" id="etiquetteCheck">
-													<label class="form-check-label" for="etiquetteCheck">Etiquette</label>
-												</div>
-												<div class="form-group">
-													<div class="etiquetteCheckArea">
-														<label for="etiquetteArea">Remplissez ici votre étiquette</label>
-														<textarea class="form-control" id="etiquetteArea" style="resize: none" rows="2" maxlength="20" placeholder="20 caractères max."></textarea>
-													</div>
-												</div>
-												<div class="form-group">
-													<div class="row">
-														<div class="col-sm">
-															<div class="dropdownChoice">
-																<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																	Ajouts
-																</button>
-																<div id="badges-list" class="dropdown-menu" aria-labelledby="dropdownButton">
-																</div>
-															</div>
-														</div>
-														<div class="col-sm-8">
-															<div class="choiceList d-flex justify-content-start flex-wrap"></div>
-														</div>
-													</div>
-												</div>
-												<div class="form-group">
-													<button
-															class="btn btn-secondary resetButton"
-															type="button"
-													>
-														Réinitialiser
-													</button>
-												</div>
-												<button
-														class="btn btn-primary saveButton"
-														type="button"
-												>
-													Sauvegarder en ligne
-												</button>
-												<button
-														class="btn btn-info basketButton"
-														type="button"
-												>
-													Ajouter au panier
-												</button>
-											</form>
+										<div id="personalisation-form" class="col-sm">
+											<div class="container">
+												<input type="color" id="background-color" value="#9C8867">
+												<label for="background-color">Couleur du faire-part</label>
+											</div>
+											<div id="item-list" class="item-list"></div>
+											<button id="add-text">Ajouter un texte</button>
 										</div>
 									</div>
 								</div>
